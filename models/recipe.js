@@ -2,11 +2,11 @@ const { Schema } = require('mongoose')
 
 const RecipeSchema = new Schema(
   {
-    firstName: { type: String, required: true },
-    lastName: { type: String, required: true },
-    characterName: {type: String, required: true},
-    age: {type: Number, required: true},
-    died: {type: Boolean, required: true}
+    name: { type: String, required: true },
+    difficulty: { type: String, required: true },
+    totalTime: {type: String, required: true},
+    servings: {type: Number, required: true},
+    cusine: { type: Schema.Types.ObjectId, ref: 'Cusine' },
   },
   { timestamps: true }
 )
