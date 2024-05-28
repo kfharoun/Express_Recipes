@@ -9,27 +9,27 @@ const main = async () => {
       {
         origin: 'Middle Eastern',
         vegetarian: true,
-        glutenFree: true
+        glutenfree: true
       },
       {
         origin: 'Italian',
         vegetarian: false,
-        glutenFree: false
+        glutenfree: false
       },
       {
         origin: 'Mexican',
         vegetarian: false,
-        glutenFree: false
+        glutenfree: false
       },
       {
         origin: 'Indian',
         vegetarian: true,
-        glutenFree: false
+        glutenfree: false
       },
       {
         origin: 'Chinese',
         vegetarian: false,
-        glutenFree: true
+        glutenfree: true
       }
     ]
 
