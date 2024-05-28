@@ -5,12 +5,11 @@ const { Recipe, Direction } = require('../models')
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const main = async () => {
-  try {
-    const lemonTahiniDressing = await Recipe.findOne({ name: 'Lemon Tahini Dressing' })
-    const spaghettiCarbonara = await Recipe.findOne({ name: 'Spaghetti Carbonara' })
-    const tacosAlPastor = await Recipe.findOne({ name: 'Tacos al Pastor' })
-    const chickenTikkaMasala = await Recipe.findOne({ name: 'Chicken Tikka Masala' })
-    const kungPaoChicken = await Recipe.findOne({ name: 'Kung Pao Chicken' })
+    const lemonTahiniDressing = await Recipe.find({ name: 'Lemon Tahini Dressing' })
+    const spaghettiCarbonara = await Recipe.find({ name: 'Spaghetti Carbonara' })
+    const tacosAlPastor = await Recipe.find({ name: 'Tacos al Pastor' })
+    const chickenTikkaMasala = await Recipe.find({ name: 'Chicken Tikka Masala' })
+    const kungPaoChicken = await Recipe.find({ name: 'Kung Pao Chicken' })
 
  
     const directions = [
@@ -48,11 +47,10 @@ const main = async () => {
 
     await Direction.insertMany(directions)
     console.log('Created Directions!')
-  } catch (error) {
-    console.error('Error creating Directions:', error)
-  } finally {
-    db.close()
-  }
 }
-
-main()
+    const run = async () => {
+        await main()
+        db.close()
+      }
+      
+      run()
