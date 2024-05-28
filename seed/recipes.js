@@ -5,7 +5,6 @@ const { Cuisine, Recipe } = require('../models')
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const main = async () => {
-  try {
     const middleEastern = await Cuisine.findOne({ origin: 'Middle Eastern' })
     const italian = await Cuisine.findOne({ origin: 'Italian' })
     const mexican = await Cuisine.findOne({ origin: 'Mexican' })
@@ -53,11 +52,10 @@ const main = async () => {
 
     await Recipe.insertMany(recipes)
     console.log('Created Recipes!')
-  } catch (error) {
-    console.error('Error creating Recipes:', error)
-  } finally {
+}
+const run = async () => {
+    await main()
     db.close()
   }
-}
-
-main()
+  
+  run()
